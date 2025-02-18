@@ -47,7 +47,6 @@ struct NavigationPushModifier: ViewModifier {
     @EnvironmentObject var coordinator: Coordinator
     
     func body(content: Content) -> some View {
-//        NavigationStack(path: coordinator.navigationPathBinding) {
             content
                 .navigationDestination(for: Pages.self) { value in
                     let _ = print("상갑 logEvent \(#function) NavigationPushModifier value: \(value)")
@@ -63,6 +62,5 @@ struct NavigationPushModifier: ViewModifier {
                             .environmentObject(coordinator)
                     }
                 }
-//        }
     }
 }
